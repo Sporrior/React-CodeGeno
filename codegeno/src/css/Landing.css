@@ -1,0 +1,36 @@
+.whole-container {
+  display: flex;
+  width: 100vw;
+  height: 80vh;
+}
+
+.container-landing-left,
+.container-landing-right {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-landing-left {
+  background-color: #f0f0f0; 
+}
+
+.container-landing-right {
+  background-color: #ffffff; 
+}
+
+.title h1{
+  font-size: 23px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.blurp-left p {
+    font-size: 10px;
+}
+
+.blurp-right p {
+    font-size: 10px;
+}

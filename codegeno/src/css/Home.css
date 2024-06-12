@@ -1,0 +1,80 @@
+.header {
+  text-align: center;
+}
+
+.title {
+  color: #27293b;
+  font-size: 45px;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+.wrapper {
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+.readmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rem;
+  background-color: green;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  touch-action: manipulation;
+  height: 65px;
+  width: 200px;
+}
+
+.button:hover {
+  box-shadow: rgba(119, 206, 142, 0.5) 0 1px 30px;
+  transition-duration: 0.1s;
+}
+
+.wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.typing-moto {
+  width: 46ch;
+  animation: typing 3s steps(37), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 15px;
+  color: #27293b;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

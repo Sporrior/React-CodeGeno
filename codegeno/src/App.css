@@ -1,0 +1,31 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: auto;
+  background-color: #e6ebf4;
+}
+
+.container section {
+  width: 100vw;
+  height: 80vh;
+}
+
+#section-1 {
+  background-color: #e6ebf4;
+}
+#section-2 {
+  background-color: #e6ebf4;
+}
+#section-3 {
+  background-color: #e6ebf4;
+}
+#section-4 {
+  background-color: #e6ebf4;
+}
