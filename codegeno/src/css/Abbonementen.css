@@ -1,0 +1,14 @@
+.containervoorprijs {
+    width: 100vw;
+    height: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.containervoorprijs h3 {
+    font-family: GT Walsheim, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 64px;
+    margin: 0;
+}

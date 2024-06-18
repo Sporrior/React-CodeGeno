@@ -9,23 +9,22 @@ body {
 
 .container {
   height: auto;
-  background-color: #e6ebf4;
 }
 
 .container section {
   width: 100vw;
-  height: 80vh;
+  height: auto;
 }
 
 #section-1 {
-  background-color: #e6ebf4;
+  background-color: #F4F3F0;
 }
 #section-2 {
-  background-color: #e6ebf4;
+  background-color: #F4F3F0;
 }
 #section-3 {
-  background-color: #e6ebf4;
+  background-color: #F4F3F0;
 }
 #section-4 {
-  background-color: #e6ebf4;
+  background-color: #F4F3F0;
 }

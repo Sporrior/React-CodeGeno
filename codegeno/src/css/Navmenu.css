@@ -14,7 +14,7 @@ nav {
   margin: 0px auto;
   perspective: 2000px;
   flex-wrap: wrap;
-  top: 1.5em;
+  top: 1.3em;
 }
 
 nav .menu-item {
@@ -38,6 +38,7 @@ nav .menu-text a {
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   transition: color 0.1s ease-out;
   text-align: center;
+
 }
 
 nav .menu-text a:hover {
@@ -182,7 +183,6 @@ nav .menu-item:nth-of-type(4):hover ~ #sub-menu-container #sub-menu-holder {
   }
 }
 
-/* Menu specific */
 .menu-item .title {
   font-weight: 500;
   color: #27293b;
@@ -193,6 +193,8 @@ nav .menu-item:nth-of-type(4):hover ~ #sub-menu-container #sub-menu-holder {
 .menu-item .icon-box * {
   transition: all 0.1s ease-out;
   position: relative;
+  text-decoration: none;
+
 }
 .menu-item .icon-box.space {
   margin-bottom: 1.25em;

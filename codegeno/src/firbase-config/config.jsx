@@ -1,12 +1,8 @@
-// Import the functions you need from the SDKs you need
+// src/firebase-config/config.js
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBqgseUofrCpso9jGcOsFXNV5ullVL9WAk",
   authDomain: "codegeno.firebaseapp.com",
@@ -18,11 +14,23 @@ const firebaseConfig = {
   measurementId: "G-E5YWTW4D6V"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const db = getFirestore(app);
+const auth = getAuth(app);
 
-const auth =getAuth(app);
+// Initialize Google Auth Provider
+const googleAuthProvider = new GoogleAuthProvider();
+googleAuthProvider.setCustomParameters({ prompt: "select_account" });
 
-export {db,auth}
+// Function to sign in with Google
+const signInWithGoogle = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleAuthProvider);
+    return result;
+  } catch (error) {
+    console.error("Error signing in with Google:", error.message);
+    throw error;
+  }
+};
+
+export { app, db, auth, signInWithGoogle, googleAuthProvider };

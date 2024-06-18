@@ -6,27 +6,27 @@ const Nav = () => {
             <nav id="menu">
                 <div className="menu-item">
                     <div className="menu-text">
-                        <a href="#">Pricing</a>
+                        <a href="/">Pricing</a>
                     </div>
                     <div className="sub-menu">
                         <div className="icon-box">
                             <div className="icon"><i className="fal fa-wind-turbine"></i></div>
                             <div className="text">
-                                <div className="title">Turbo Editor <i className="far fa-arrow-right"></i></div>
-                                <div className="sub-text">Free Tier Subscription</div>
+                                <div className="title">Personal <i className="far fa-arrow-right"></i></div>
+                                <div className="sub-text">30 minutes of free lessons.</div>
                             </div>
                         </div>
                         <div className="icon-box">
                             <div className="icon"><i className="fal fa-lightbulb-on"></i></div>
                             <div className="text">
-                                <div className="title">Idea Creator <i className="far fa-arrow-right"></i></div>
-                                <div className="sub-text">Beginner Tier Subsciption</div>
+                                <div className="title">small Team <i className="far fa-arrow-right"></i></div>
+                                <div className="sub-text">learn,code and share your work.</div>
                             </div>
                         </div>
                         <div className="icon-box">
                             <div className="icon"><i className="fal fa-bomb"></i></div>
                             <div className="text">
-                                <div className="title">Super Collider <i className="far fa-arrow-right"></i></div>
+                                <div className="title">Enterprise <i className="far fa-arrow-right"></i></div>
                                 <div className="sub-text">Top Tier Subscription</div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@ const Nav = () => {
                 </div>
                 <div className="menu-item highlight">
                     <div className="menu-text">
-                        <a href="#">Services</a>
+                        <a href="/">Services</a>
                     </div>
                     <div className="sub-menu double">
                         <div className="icon-box gb a">
@@ -81,14 +81,14 @@ const Nav = () => {
                             </div>
                         </div>
                         <div className="bottom-container">
-                            Ready to dive in? <a href="#">Log in</a>
+                            Ready to dive in? <a href="/login">Log in</a>
                         </div>
                         <div className="sub-menu-holder"></div>
                     </div>
                 </div>
                 <div className="menu-item highlight">
                     <div className="menu-text">
-                        <a href="#">Support</a>
+                        <a href="/">Support</a>
                     </div>
                     <div className="sub-menu triple">
                         <div className="top-container gb c icon-box">
@@ -100,17 +100,17 @@ const Nav = () => {
                         </div>
                         <div className="box">
                             <h3>Your Journey</h3>
-                            <a href="#">Get Started</a>
-                            <a href="#">Learn the Basics</a>
-                            <a href="#">Get Advanced</a>
-                            <a href="#">Start Teaching</a>
+                            <a href="/">Get Started</a>
+                            <a href="/">Learn the Basics</a>
+                            <a href="/">Get Advanced</a>
+                            <a href="/">Start Teaching</a>
                         </div>
                         <div className="box">
                             <h3>Your Tools</h3>
-                            <a href="#">Turbo Editor</a>
-                            <a href="#">Time Stopper</a>
-                            <a href="#">Brain Enhancer</a>
-                            <a href="#">Network Maker</a>
+                            <a href="/">Turbo Editor</a>
+                            <a href="/">Time Stopper</a>
+                            <a href="/">Brain Enhancer</a>
+                            <a href="/">Network Maker</a>
                         </div>
                         <div className="icon-box flat">
                             <div className="icon"><i className="fal fa-plug"></i></div>
@@ -140,13 +140,13 @@ const Nav = () => {
                 </div>
                 <div className="menu-item">
                     <div className="menu-text">
-                        <a href="">Community</a>
+                        <a href="/">Community</a>
                     </div>
                     <div className="sub-menu">
                         <div className="icon-box">
                             <div className="icon"><i className="far fa-satellite"></i></div>
                             <div className="text">
-                                <div className="title">Forum <i className="far fa-arrow-right"></i></div>
+                                <a href="/forum"><div className="title">Forum <i className="far fa-arrow-right"></i></div></a> 
                                 <div className="sub-text">Join our passionate community.</div>
                             </div>
                         </div>

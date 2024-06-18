@@ -1,0 +1,32 @@
+.container-3 {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Total width of the container */
+  padding: 20px; /* Add some padding for spacing */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+.picture {
+  width: 30%; /* Each picture occupies 30% of the container width */
+  height: 400px; /* Adjust height as needed */
+  border-radius: 10px; /* Add some border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.left {
+  background-image: url("../assets/img-1.jpeg"); /* Replace 'left.jpg' with your left picture */
+  background-size: cover;
+}
+
+.middle {
+  background-image: url("../assets/img-2.jpeg"); /* Replace 'middle.jpg' with your middle picture */
+  background-size: cover;
+  margin-left: -10%; /* Adjust to make it overlap */
+  margin-right: -10%; /* Adjust to make it overlap */
+  z-index: 1; /* Ensure the middle picture is above the others */
+}
+
+.right {
+  background-image: url("../assets/img-3.jpeg"); /* Replace 'right.jpg' with your right picture */
+  background-size: cover;
+}

@@ -1,23 +1,27 @@
-import Landing from "../components/Landing";
+import Landing from "../views/Landing";
 import "../css/Home.css";
+import Abbonement from "./Abbonementen";
+import Footer from "../components/footer";
+import SpinComponent from "../components/spin-info";
 
-const Main = () => {
+
+const Homescreen = () => {
     return (
         <div className="container">
       <section id="section-1">
         <Landing />
       </section>
       <section id="section-2">
-        test
+        <SpinComponent />
       </section>
       <section id="section-3">
-        test
+        <Abbonement />
       </section>
       <section id="section-4">
-        test
+        <Footer />
       </section>
     </div>
     );
 }
 
-export default Main;
+export default Homescreen;
