@@ -4,6 +4,7 @@ import Forum from './views/Forum';
 import Nav from './components/Navmenu';
 import Homescreen from './views/Home';
 import LoginAndSignUp from './views/Loginpage';
+import Dashboard from './views/Profile';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Homescreen />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/login" element={<LoginAndSignUp />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
       </Routes>
     </Router>
   );

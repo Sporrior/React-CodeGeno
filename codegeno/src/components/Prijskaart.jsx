@@ -13,7 +13,7 @@ const PricingComponent = () => {
                             <li className="pricing-features-item">30 minutes of free lessons.</li>
                         </ul>
                         <span className="pricing-price">Free</span>
-                        <a href="#/" className="pricing-button">Sign up</a>
+                        <a href="/login" className="pricing-button">Sign up</a>
                     </div>
 
                     <div className="pricing-plan">
@@ -24,7 +24,7 @@ const PricingComponent = () => {
                             <li className="pricing-features-item">learn,code and share your work.</li>
                         </ul>
                         <span className="pricing-price">$150</span>
-                        <a href="#/" className="pricing-button is-featured">Free trial</a>
+                        <a href="/" className="pricing-button is-featured">Free trial</a>
                     </div>
 
                     <div className="pricing-plan">
@@ -35,7 +35,7 @@ const PricingComponent = () => {
                             <li className="pricing-features-item">Everything the other tier has + extra benefits.</li>
                         </ul>
                         <span className="pricing-price">$400</span>
-                        <a href="#/" className="pricing-button">Free trial</a>
+                        <a href="/" className="pricing-button">Free trial</a>
                     </div>
 
                 </div>

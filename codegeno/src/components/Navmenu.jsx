@@ -145,24 +145,24 @@ const Nav = () => {
                     <div className="sub-menu">
                         <div className="icon-box">
                             <div className="icon"><i className="far fa-satellite"></i></div>
-                            <div className="text">
-                                <a href="/forum"><div className="title">Forum <i className="far fa-arrow-right"></i></div></a> 
+                            <a href="/forum"><div className="text">
+                                <div className="title">Forum <i className="far fa-arrow-right"></i></div>
                                 <div className="sub-text">Join our passionate community.</div>
-                            </div>
+                            </div></a>
                         </div>
                         <div className="icon-box">
                             <div className="icon"><i className="fab fa-twitter-square"></i></div>
-                            <div className="text">
-                                <div className="title">Twitter <i className="far fa-arrow-right"></i></div>
-                                <div className="sub-text">Follow us on twitter.</div>
-                            </div>
+                            <a href="/code-editor"><div className="text">
+                                <div className="title">Code Editor <i className="far fa-arrow-right"></i></div>
+                                <div className="sub-text">Make your code no longer a dream.</div>
+                            </div></a>
                         </div>
                         <div className="icon-box">
                             <div className="icon"><i className="fab fa-twitch"></i></div>
-                            <div className="text">
-                                <div className="title">Live Stream <i className="far fa-arrow-right"></i></div>
-                                <div className="sub-text">We stream content every day.</div>
-                            </div>
+                            <a href="/learning"><div className="text">
+                                <div className="title">Learn to Code <i className="far fa-arrow-right"></i></div>
+                                <div className="sub-text">Dream to code.</div>
+                            </div></a>
                         </div>
                         <div className="sub-menu-holder"></div>
                     </div>
