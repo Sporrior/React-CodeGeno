@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth, signInWithGoogle } from '../firbase-config/config';
+import { auth, signInWithGoogle, onAuthStateChanged } from '../firbase-config/config';
 import { useSignInWithEmailAndPassword, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import '../css/Login.css';
 
@@ -11,6 +11,15 @@ const AuthForm = () => {
   const [signInWithEmailAndPassword, userLogin, loadingLogin, errorLogin] = useSignInWithEmailAndPassword(auth);
   const [createUserWithEmailAndPassword, userSignup, loadingSignup, errorSignup] = useCreateUserWithEmailAndPassword(auth);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate('/profile');
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleAuth = (e) => {
     e.preventDefault();
@@ -24,7 +33,7 @@ const AuthForm = () => {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle();
-      navigate('/');
+      navigate('/profile');
     } catch (error) {
       console.error('Error signing in with Google:', error.message);
     }
@@ -33,9 +42,9 @@ const AuthForm = () => {
   const redirectIfLoggedIn = (user) => {
     if (user) {
       setTimeout(() => {
-        navigate('/');
+        navigate('/profile');
       }, 2000);
-      return <div className="message">Successfully {isSignup ? 'signed up' : 'logged in'}! Redirecting to home...</div>;
+      return <div className="message">Successfully {isSignup ? 'signed up' : 'logged in'}! Redirecting to profile...</div>;
     }
   };
 

@@ -152,8 +152,8 @@ const Nav = () => {
                         </div>
                         <div className="icon-box">
                             <div className="icon"><i className="fab fa-twitter-square"></i></div>
-                            <a href="/code-editor"><div className="text">
-                                <div className="title">Code Editor <i className="far fa-arrow-right"></i></div>
+                            <a href="/profile"><div className="text">
+                                <div className="title">Profile <i className="far fa-arrow-right"></i></div>
                                 <div className="sub-text">Make your code no longer a dream.</div>
                             </div></a>
                         </div>

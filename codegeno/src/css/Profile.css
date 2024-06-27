@@ -1,76 +1,238 @@
-/* styles.css */
-
 body {
   font-family: "Arial", sans-serif;
-  background-color: #f0f0f0;
+  background-color: #f5f8fa;
   margin: 0;
   padding: 0;
 }
 
-.container {
+.profile-container {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.header {
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-header h2 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #ff4b5c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #e04350;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #e0e0e0;
+}
+
+.change-pic-label {
+  cursor: pointer;
+  color: #1da1f2;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.profile-pic input {
+  display: none;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-details p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.username-update {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.username-update input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.username-update button {
+  padding: 10px 20px;
+  background-color: #1da1f2;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.username-update button:disabled {
+  background-color: #a9d6ff;
+  cursor: not-allowed;
+}
+
+.username-update button:hover:not(:disabled) {
+  background-color: #0d8bd9;
+}
+
+.error {
+  color: red;
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
-.header h2 {
-  color: #007bff;
+.friend-requests {
+  margin: 20px 0;
+  text-align: center;
 }
 
-.user-info {
-  margin-bottom: 20px;
-}
-
-.user-info p {
-  margin: 10px 0;
-}
-
-.settings-form {
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.settings-form label {
-  display: block;
+.friend-requests h3 {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.settings-form input[type="text"] {
-  width: calc(100% - 20px);
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.friend-requests input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  flex: 1;
 }
 
-.settings-form button {
-  margin-top: 10px;
-  padding: 8px 20px;
-  background-color: #007bff;
-  color: #fff;
+.friend-requests button {
+  padding: 10px 20px;
+  background-color: #1da1f2;
+  color: #ffffff;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.settings-form button:hover {
-  background-color: #0056b3;
+.friend-requests button:hover {
+  background-color: #0d8bd9;
 }
 
-.logout-btn {
-  background-color: #dc3545;
+.friend-requests ul {
+  list-style: none;
+  padding: 0;
 }
 
-.logout-btn:hover {
-  background-color: #c82333;
+.friend-requests li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+.friend-requests li button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.friend-requests li button:hover {
+  background-color: #45a049;
+}
+
+.friend-requests li button:nth-child(2) {
+  background-color: #ff4b5c;
+}
+
+.friend-requests li button:nth-child(2):hover {
+  background-color: #e04350;
+}
+
+.recent-posts {
+  margin-top: 20px;
+}
+
+.recent-posts h3 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.post {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post h4 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.post p {
+  margin: 0 0 10px;
+  color: #555;
+}
+
+.post small {
+  color: #999;
 }

@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getFirestore, collection, query, where, getDocs, updateDoc, doc, setDoc, getDoc, arrayUnion, arrayRemove, addDoc, deleteDoc, Timestamp } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBqgseUofrCpso9jGcOsFXNV5ullVL9WAk",
@@ -16,6 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const storage = getStorage(app);
 
 const googleAuthProvider = new GoogleAuthProvider();
 googleAuthProvider.setCustomParameters({ prompt: "select_account" });
@@ -30,4 +32,29 @@ const signInWithGoogle = async () => {
   }
 };
 
-export { app, db, auth, signInWithGoogle, googleAuthProvider };
+export {
+  app,
+  db,
+  auth,
+  storage,
+  signInWithGoogle,
+  googleAuthProvider,
+  onAuthStateChanged,
+  signOut,
+  collection,
+  query,
+  where,
+  getDocs,
+  updateDoc,
+  doc,
+  setDoc,
+  getDoc,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  arrayUnion,
+  arrayRemove,
+  addDoc,
+  deleteDoc,
+  Timestamp
+};

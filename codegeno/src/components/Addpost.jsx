@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { doc, setDoc, Timestamp } from "firebase/firestore";
-import { db } from "../firbase-config/config";
+import React, { useEffect, useState } from "react";
+import { doc, setDoc, Timestamp, getDoc } from "firebase/firestore";
+import { auth, db, onAuthStateChanged } from "../firbase-config/config";
 import "../css/Addpost.css";
 
 const AddPost = () => {
@@ -8,7 +8,22 @@ const AddPost = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [message, setMessage] = useState("");
-    const [showPopup, setShowPopup] = useState(false); // State for controlling popup visibility
+    const [showPopup, setShowPopup] = useState(false);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const userDoc = await getDoc(doc(db, 'users', user.uid));
+                if (userDoc.exists()) {
+                    const userData = userDoc.data();
+                    setUsername(userData.username || '');
+                }
+            } else {
+                setUsername(`Guest#${Math.floor(1000 + Math.random() * 9000)}`);
+            }
+        });
+        return () => unsubscribe();
+    }, []);
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
@@ -21,10 +36,9 @@ const AddPost = () => {
                 content: content
             });
             setMessage("Post successfully added!");
-            setUsername("");
             setTitle("");
             setContent("");
-            togglePopup(); // Close popup after successful submission
+            togglePopup();
         } catch (error) {
             console.error("Error adding document: ", error);
             setMessage("Error adding post.");
@@ -32,7 +46,7 @@ const AddPost = () => {
     };
 
     const togglePopup = () => {
-        setShowPopup(!showPopup); // Toggle popup visibility
+        setShowPopup(!showPopup);
     };
 
     return (
@@ -50,6 +64,7 @@ const AddPost = () => {
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                     required
+                                    readOnly
                                 />
                             </label>
                         </div>

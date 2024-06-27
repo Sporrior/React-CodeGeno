@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
     collection,
     query,
@@ -8,10 +8,11 @@ import {
     updateDoc,
     Timestamp,
     arrayUnion,
-    addDoc
-} from "firebase/firestore";
-import { db } from "../firbase-config/config";
-import "../css/Form-data.css";
+    addDoc,
+    getDoc
+} from 'firebase/firestore';
+import { auth, db, onAuthStateChanged } from '../firbase-config/config';
+import '../css/Form-data.css';
 
 const sampleNames = [
     "Alice", "Bob", "Charlie", "David", "Eva",
@@ -121,7 +122,7 @@ const generateDummyPosts = async () => {
             await addDoc(postsCollection, dummyPost);
             console.log(`Dummy post ${i + 1} added successfully!`);
 
-            await delay(1000);
+            await delay(12000);
         } catch (error) {
             console.error("Error adding dummy post: ", error);
         }
@@ -132,6 +133,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Formdata = () => {
     const [posts, setPosts] = useState([]);
+    const [username, setUsername] = useState('');
 
     useEffect(() => {
         const unsubscribe = onSnapshot(
@@ -145,6 +147,19 @@ const Formdata = () => {
             }
         );
 
+        return () => unsubscribe();
+    }, []);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const userDoc = await getDoc(doc(db, 'users', user.uid));
+                if (userDoc.exists()) {
+                    const userData = userDoc.data();
+                    setUsername(userData.username || '');
+                }
+            }
+        });
         return () => unsubscribe();
     }, []);
 
@@ -188,7 +203,7 @@ const Formdata = () => {
             const postRef = doc(db, "posts", postId);
             await updateDoc(postRef, {
                 comments: arrayUnion({
-                    username: "SampleUser",
+                    username: username,
                     timestamp: Timestamp.fromDate(new Date()),
                     content: commentInput
                 })
