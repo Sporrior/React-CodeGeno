@@ -1,4 +1,3 @@
-// src/firebase-config/config.js
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -18,11 +17,9 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// Initialize Google Auth Provider
 const googleAuthProvider = new GoogleAuthProvider();
 googleAuthProvider.setCustomParameters({ prompt: "select_account" });
 
-// Function to sign in with Google
 const signInWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleAuthProvider);

@@ -1,4 +1,3 @@
-// src/components/AuthForm.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, signInWithGoogle } from '../firbase-config/config';

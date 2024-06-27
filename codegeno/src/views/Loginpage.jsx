@@ -1,9 +1,10 @@
-import Login from "../components/Login";
+import AuthForm from "../components/Login";
+
 
 const LoginAndSignUp = () => {
     return (
         <div className='containervoorlogin'>
-            <Login />
+            <AuthForm />
         </div>
     )
 }

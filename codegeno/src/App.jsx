@@ -4,7 +4,7 @@ import Forum from './views/Forum';
 import Nav from './components/Navmenu';
 import Homescreen from './views/Home';
 import LoginAndSignUp from './views/Loginpage';
-import Dashboard from './views/Profile';
+// import Dashboard from './views/Profile';
 
 function App() {
   return (
